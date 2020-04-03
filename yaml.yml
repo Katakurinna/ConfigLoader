@@ -1,0 +1,26 @@
+creation-date: HOLA
+chat:
+  prefix: ""
+  messages:
+    es:
+      user:
+        join:
+          game: "%s joined the game"
+          party: "%s joined the party"
+          world: "%s joined the world"
+        leave:
+          game: "%s left the game"
+          party: "%s left the party"
+          world: "%s left the world"
+        errors:
+          commands:
+            invalid: "Wrong params."
+            not-found:
+              - "The have performed a command that doesn't exists."
+              - "You can see the list of commands with: /help"
+            pepephone:
+              - 1
+              - 5
+players:
+  Nurio:
+    id: 1
