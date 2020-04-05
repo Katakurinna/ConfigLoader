@@ -3,15 +3,15 @@ package me.cerratolabs.configloader.configuration.adapters.properties;
 import lombok.Getter;
 import me.cerratolabs.configloader.ConfigFile;
 import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigManager;
-import me.cerratolabs.configloader.configuration.adapters.yaml.loaders.YAMLLoader;
+import me.cerratolabs.configloader.configuration.adapters.yaml.loaders.YAMLFileLoader;
 
 public class PropertiesManager implements ConfigManager {
 
     @Getter private String name = "Properties";
 
     @Override
-    public YAMLLoader parse(String path){
-        return new YAMLLoader(path);
+    public YAMLFileLoader parse(String path){
+        return new YAMLFileLoader(path);
     }
 
     @Override

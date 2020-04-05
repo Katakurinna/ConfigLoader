@@ -1,6 +1,6 @@
 package me.cerratolabs.configloader;
 
-import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigLoader;
+import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigFileLoader;
 import me.cerratolabs.configloader.configuration.interfaces.nodes.Node;
 
 import java.io.IOException;
@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Map;
 
 public class ConfigFile {
-    private ConfigLoader loader;
+    private ConfigFileLoader loader;
     private Node node;
 
-    public ConfigFile(ConfigLoader loader, Node node) {
+    public ConfigFile(ConfigFileLoader loader, Node node) {
         this.loader = loader;
         this.node = node;
     }

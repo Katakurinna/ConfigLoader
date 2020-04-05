@@ -2,7 +2,7 @@ package me.cerratolabs.configloader.configuration.interfaces.managers;
 
 import java.io.IOException;
 
-public interface ConfigLoader {
+public interface ConfigFileLoader {
 
     void save() throws IOException;
 

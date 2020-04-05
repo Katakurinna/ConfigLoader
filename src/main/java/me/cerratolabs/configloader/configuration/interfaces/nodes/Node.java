@@ -3,13 +3,6 @@ package me.cerratolabs.configloader.configuration.interfaces.nodes;
 public interface Node {
 
     /**
-     * Get an Node, parent of this node.
-     *
-     * @return Node parent of this node.
-     */
-    <T> T getParent();
-
-    /**
      * Get an object containing a part of map (Map, List, String, etc).
      *
      * @param key the key of the part of map you want.
@@ -17,11 +10,11 @@ public interface Node {
      */
     <T> T get(String key);
 
-    void addChildren(Object children);
+    void set(String key, Object object);
 
-    String getKey();
+    void setMap(Object object);
 
-    void setKey(String key);
+    Object getMap();
 
-    String getAbsoluteKey();
+    boolean existKey(String key);
 }

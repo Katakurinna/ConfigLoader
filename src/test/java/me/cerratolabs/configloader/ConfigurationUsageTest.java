@@ -17,7 +17,7 @@ public class ConfigurationUsageTest {
 
     @Test
     public void pop() throws IOException {
-       /* ConfigFile cfg = new ConfigFile(new YAMLLoader("yaml.yml"));
+       /* ConfigFile cfg = new ConfigFile(new YAMLFileLoader("yaml.yml"));
         cfg.load();
         for (String key : cfg.getKeys()) {
             System.out.println(cfg.get(key));
