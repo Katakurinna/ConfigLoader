@@ -15,7 +15,7 @@ public class YAMLNode implements Node {
 
     @Override
     public Object get(String key) {
-        return (!isTheLastNode(key)) ? get(getNextNodeBlock(key), map.get(getFirstKeyNode(key))) : map.get(key);
+        return get(key, map);
     }
 
     public Object get(String key, Object lastObject) {
