@@ -32,7 +32,8 @@ public class ConfigLoader {
     }
 
     public Object get(String key) {
-        return null;
+        if (key == null || key.isEmpty()) throw new NullPointerException("Param 'key' is null or empty");
+        return node.get(key);
     }
 
     public void append(ConfigLoader configFile) {
