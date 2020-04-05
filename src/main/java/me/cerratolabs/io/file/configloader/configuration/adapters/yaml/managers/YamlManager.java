@@ -11,7 +11,7 @@ public class YamlManager implements ConfigManager {
     @Getter private String name = "YAML";
 
     @Override
-    public YAMLFileLoader parse(String path){
+    public YAMLFileLoader parse(String path) {
         return new YAMLFileLoader(path);
     }
 

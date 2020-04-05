@@ -1,10 +1,10 @@
 package me.cerratolabs.io.file.configloader.factory;
 
-import me.cerratolabs.configloader.ConfigFile;
-import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
-import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
+import me.cerratolabs.io.file.configloader.ConfigLoader;
 import me.cerratolabs.io.file.configloader.configuration.adapters.properties.PropertiesManager;
 import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.managers.YamlManager;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,13 +33,13 @@ public class ConfigFactory {
      * @throws IllegalArgumentException Throw the exception if you don't allow the file format passed by parameter.
      * @throws NullPointerException     d
      */
-    public static ConfigFile getConfigFile(String path) throws NullPointerException, IllegalArgumentException, IOException {
-        ConfigFile cfg = createConfigFile(path);
+    public static ConfigLoader getConfigLoader(String path) throws NullPointerException, IllegalArgumentException, IOException {
+        ConfigLoader cfg = createConfigLoader(path);
         cfg.load();
         return cfg;
     }
 
-    public static ConfigFile createConfigFile(String path) throws NullPointerException, IllegalArgumentException {
+    public static ConfigLoader createConfigLoader(String path) throws NullPointerException, IllegalArgumentException {
         if (path == null || path.isEmpty()) throw new NullPointerException("path parameter is null.");
 
         ConfigManager manager = (ConfigManager) configComparators.stream().filter(comparator -> comparator.matches(path)).findFirst().orElse(null);

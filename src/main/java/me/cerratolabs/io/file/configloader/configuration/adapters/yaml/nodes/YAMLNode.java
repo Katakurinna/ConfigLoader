@@ -6,7 +6,6 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.List;
 
 @RequiredArgsConstructor
 public class YAMLNode implements Node {

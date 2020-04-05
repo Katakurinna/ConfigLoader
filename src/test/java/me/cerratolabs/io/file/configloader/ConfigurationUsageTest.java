@@ -89,18 +89,18 @@ public class ConfigurationUsageTest {
 
     @Test
     public void configComparator() throws IOException {
-        ConfigFile cfg = ConfigFactory.getConfigFile("yaml.yml");
+        ConfigFile cfg = ConfigFactory.getConfigLoader("yaml.yml");
         System.out.println(cfg.get("chat"));
 
 
-        ConfigFile cfgProp = ConfigFactory.getConfigFile("noseque.props");
+        ConfigFile cfgProp = ConfigFactory.getConfigLoader("noseque.props");
         cfgProp.load();
         System.out.println(cfgProp.get("chat"));
     }
 
     @Test
     public void createFile() throws IOException {
-        ConfigFile cfgProp = ConfigFactory.createConfigFile("yaml.yml");
+        ConfigFile cfgProp = ConfigFactory.createConfigLoader("yaml.yml");
         cfgProp.save();
     }
 

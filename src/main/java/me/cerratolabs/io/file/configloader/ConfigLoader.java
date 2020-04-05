@@ -6,7 +6,6 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.util.LinkedList;
-import java.util.Map;
 
 public class ConfigLoader {
     private ConfigFileLoader loader;
@@ -63,6 +62,7 @@ public class ConfigLoader {
 
     /**
      * Append this config with another config.
+     *
      * @param configFile {@link ConfigLoader} to add.
      */
     public void append(ConfigLoader configFile) {
@@ -73,7 +73,7 @@ public class ConfigLoader {
         return node.getMap();
     }
 
-    public LinkedList<String> getKeys() {
+    public LinkedList<Object> getKeys() {
         return node.getKeyList();
     }
 
