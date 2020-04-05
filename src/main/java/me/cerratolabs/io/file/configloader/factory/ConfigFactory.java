@@ -2,7 +2,7 @@ package me.cerratolabs.io.file.configloader.factory;
 
 import me.cerratolabs.io.file.configloader.ConfigLoader;
 import me.cerratolabs.io.file.configloader.configuration.adapters.properties.PropertiesManager;
-import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.managers.YamlManager;
+import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YamlManager;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 

@@ -2,7 +2,7 @@ package me.cerratolabs.io.file.configloader.configuration.adapters.properties;
 
 import lombok.Getter;
 import me.cerratolabs.io.file.configloader.ConfigLoader;
-import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.loaders.YAMLFileLoader;
+import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YAMLFileLoader;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
 /**

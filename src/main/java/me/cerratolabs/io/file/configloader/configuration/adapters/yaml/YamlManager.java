@@ -1,9 +1,7 @@
-package me.cerratolabs.io.file.configloader.configuration.adapters.yaml.managers;
+package me.cerratolabs.io.file.configloader.configuration.adapters.yaml;
 
 import lombok.Getter;
 import me.cerratolabs.io.file.configloader.ConfigLoader;
-import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.loaders.YAMLFileLoader;
-import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.nodes.YAMLNode;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
 public class YamlManager implements ConfigManager {

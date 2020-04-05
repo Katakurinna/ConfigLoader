@@ -1,4 +1,4 @@
-package me.cerratolabs.io.file.configloader.configuration.adapters.yaml.loaders;
+package me.cerratolabs.io.file.configloader.configuration.adapters.yaml;
 
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigFileLoader;
 import org.yaml.snakeyaml.Yaml;
