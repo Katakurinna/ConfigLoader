@@ -2,8 +2,11 @@ package me.cerratolabs.io.file.configloader.configuration.adapters.yaml.nodes;
 
 import lombok.RequiredArgsConstructor;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.nodes.Node;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 @RequiredArgsConstructor
 public class YAMLNode implements Node {
@@ -21,13 +24,14 @@ public class YAMLNode implements Node {
 
     @Override
     public void set(String key, Object object) {
-
+        throw new NotImplementedException();
+        /*
         if (key.split(".").length == 1) {
             map.put(key, object);
         }
 
         convertToLinkedHashMap(get(key, map)).put(key, object);
-
+        */
     }
 
     @Override
@@ -52,6 +56,11 @@ public class YAMLNode implements Node {
     @Override
     public boolean existKey(String key) {
         return existKey(key, map);
+    }
+
+    @Override
+    public LinkedList<Object> getKeyList() {
+        return new LinkedList<>(map.keySet());
     }
 
     public boolean existKey(String key, LinkedHashMap<Object, Object> object) {

@@ -1,5 +1,7 @@
 package me.cerratolabs.io.file.configloader.configuration.interfaces.nodes;
 
+import java.util.LinkedList;
+
 public interface Node {
 
     /**
@@ -17,4 +19,6 @@ public interface Node {
     Object getMap();
 
     boolean existKey(String key);
+
+    LinkedList<Object> getKeyList();
 }
