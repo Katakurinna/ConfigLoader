@@ -25,6 +25,10 @@ public class ConfigLoader {
     }
 
     public void set(String key, String value) {
+        if (key == null || key.isEmpty()) throw new NullPointerException("Param 'key' is null or empty");
+        if (value == null) throw new NullPointerException("Param 'value' is null");
+        node.set(key, value);
+
     }
 
     public Object get(String key) {
