@@ -1,10 +1,10 @@
-package me.cerratolabs.configloader.factory;
+package me.cerratolabs.io.file.configloader.factory;
 
 import me.cerratolabs.configloader.ConfigFile;
-import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigComparator;
-import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigManager;
-import me.cerratolabs.configloader.configuration.adapters.properties.PropertiesManager;
-import me.cerratolabs.configloader.configuration.adapters.yaml.managers.YamlManager;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
+import me.cerratolabs.io.file.configloader.configuration.adapters.properties.PropertiesManager;
+import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.managers.YamlManager;
 
 import java.io.IOException;
 import java.util.ArrayList;

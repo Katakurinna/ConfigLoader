@@ -1,5 +1,6 @@
-package me.cerratolabs.configloader.configuration.interfaces.managers;
+package me.cerratolabs.io.file.configloader.configuration.interfaces.managers;
 
+import java.io.File;
 import java.io.IOException;
 
 public interface ConfigFileLoader {
@@ -8,5 +9,6 @@ public interface ConfigFileLoader {
 
     void load() throws IOException;
 
+    void setNewFile(File file);
 
 }

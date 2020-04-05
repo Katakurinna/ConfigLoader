@@ -1,9 +1,9 @@
-package me.cerratolabs.configloader.configuration.adapters.properties;
+package me.cerratolabs.io.file.configloader.configuration.adapters.properties;
 
 import lombok.Getter;
 import me.cerratolabs.configloader.ConfigFile;
-import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigManager;
-import me.cerratolabs.configloader.configuration.adapters.yaml.loaders.YAMLFileLoader;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
+import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.loaders.YAMLFileLoader;
 
 public class PropertiesManager implements ConfigManager {
 

@@ -1,4 +1,4 @@
-package me.cerratolabs.configloader.configuration.interfaces.nodes;
+package me.cerratolabs.io.file.configloader.configuration.interfaces.nodes;
 
 public interface Node {
 

@@ -1,7 +1,7 @@
-package me.cerratolabs.configloader.configuration.adapters.yaml.nodes;
+package me.cerratolabs.io.file.configloader.configuration.adapters.yaml.nodes;
 
 import lombok.RequiredArgsConstructor;
-import me.cerratolabs.configloader.configuration.interfaces.nodes.Node;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.nodes.Node;
 
 import java.util.LinkedHashMap;
 

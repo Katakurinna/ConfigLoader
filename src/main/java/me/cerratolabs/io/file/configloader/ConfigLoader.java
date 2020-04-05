@@ -1,18 +1,17 @@
-package me.cerratolabs.configloader;
+package me.cerratolabs.io.file.configloader;
 
-import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigFileLoader;
-import me.cerratolabs.configloader.configuration.interfaces.nodes.Node;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigFileLoader;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.nodes.Node;
 
 import java.io.IOException;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
-public class ConfigFile {
+public class ConfigLoader {
     private ConfigFileLoader loader;
     private Node node;
 
-    public ConfigFile(ConfigFileLoader loader, Node node) {
+    public ConfigLoader(ConfigFileLoader loader, Node node) {
         this.loader = loader;
         this.node = node;
     }
@@ -28,15 +27,11 @@ public class ConfigFile {
     public void set(String key, String value) {
     }
 
-    public void setList(String key, List<Object> value) {
-
-    }
-
-    public Node get(String key) {
+    public Object get(String key) {
         return null;
     }
 
-    public void append(ConfigFile configFile) {
+    public void append(ConfigLoader configFile) {
     }
 
     public Map<String, String> getMap() {

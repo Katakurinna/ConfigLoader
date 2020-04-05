@@ -1,6 +1,6 @@
-package me.cerratolabs.configloader.configuration.adapters.yaml.loaders;
+package me.cerratolabs.io.file.configloader.configuration.adapters.yaml.loaders;
 
-import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigFileLoader;
+import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigFileLoader;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
@@ -28,6 +28,11 @@ public class YAMLFileLoader implements ConfigFileLoader {
     public void load() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         map = yaml.load(bufferedReader);
+    }
+
+    @Override
+    public void setNewFile(File file) {
+        this.file = file;
     }
 
 }

@@ -1,4 +1,4 @@
-package me.cerratolabs.configloader.configuration.interfaces.managers;
+package me.cerratolabs.io.file.configloader.configuration.interfaces.managers;
 
 import me.cerratolabs.configloader.ConfigFile;
 

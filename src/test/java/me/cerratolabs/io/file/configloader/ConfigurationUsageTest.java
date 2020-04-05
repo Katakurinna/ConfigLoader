@@ -1,7 +1,6 @@
-package me.cerratolabs.configloader;
+package me.cerratolabs.io.file.configloader;
 
-import me.cerratolabs.configloader.configuration.adapters.yaml.nodes.YAMLNode;
-import me.cerratolabs.configloader.factory.ConfigFactory;
+import me.cerratolabs.io.file.configloader.factory.ConfigFactory;
 import org.junit.Test;
 import org.yaml.snakeyaml.Yaml;
 

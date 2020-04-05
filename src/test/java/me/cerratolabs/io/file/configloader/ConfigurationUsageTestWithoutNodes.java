@@ -1,4 +1,4 @@
-package me.cerratolabs.configloader;
+package me.cerratolabs.io.file.configloader;
 
 import org.junit.Test;
 import org.yaml.snakeyaml.Yaml;
