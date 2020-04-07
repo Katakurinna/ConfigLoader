@@ -1,14 +1,16 @@
-package me.cerratolabs.io.file.configloader;
+package me.cerratolabs.io.file.configloader.testVersion1;
 
 import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YAMLNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.yaml.snakeyaml.Yaml;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.File;
 import java.io.FileReader;
 import java.util.LinkedHashMap;
 
-import static org.junit.Assert.*;
 
 public class ConfigurationUsageYAMLNode {
 
@@ -30,31 +32,30 @@ public class ConfigurationUsageYAMLNode {
 
     @Test
     public void testIfExistKey() {
-
         // Existing node 'creation-date'
         String key = "creation-date";
-        assertTrue(key, node.existKey(key));
+        assertTrue(node.existKey(key), key);
 
         // The next node dont exist.
         key = "creation-dat";
-        assertFalse(key, node.existKey(key));
+        assertFalse(node.existKey(key), key);
 
         // Existing node with children
         key = "chat.prefix";
-        assertTrue(key, node.existKey(key));
+        assertTrue(node.existKey(key), key);
 
         // Not existing node with children
         key = "chat.juan";
-        assertFalse(key, node.existKey(key));
+        assertFalse(node.existKey(key), key);
 
 
         // Existing node with much children
         key = "chat.messages.es.user.errors.commands.invalid";
-        assertTrue(key, node.existKey(key));
+        assertTrue(node.existKey(key), key);
 
         // Not existing node with much children
         key = "chat.messages.es.user.errors.commands.invalid.not-found";
-        assertFalse(key, node.existKey(key));
+        assertFalse(node.existKey(key), key);
     }
 
     @Test

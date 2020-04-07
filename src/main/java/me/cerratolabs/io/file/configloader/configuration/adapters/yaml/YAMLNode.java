@@ -2,22 +2,41 @@ package me.cerratolabs.io.file.configloader.configuration.adapters.yaml;
 
 import lombok.RequiredArgsConstructor;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.nodes.Node;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+
+import static me.cerratolabs.io.file.configloader.utils.KeyManager.*;
 
 @RequiredArgsConstructor
 public class YAMLNode implements Node {
 
     private LinkedHashMap<Object, Object> map;
 
+    /**
+     * Get the value of a key node.
+     * The method can return the following objects types:
+     * <p><ul>
+     * <li>Integer</li>
+     * <li>Long</li>
+     * <li>Float</li>
+     * <li>Double</li>
+     * <li>Character</li>
+     * <li>String</li>
+     * <li>ArrayList{@literal <Object>}</li>
+     * </ul><p>
+     *
+     * @param key key node
+     * @return Object or null if not exist.
+     */
     @Override
     public Object get(String key) {
+        if (key == null || key.isEmpty()) return null;
         return get(key, map);
     }
 
     private Object get(String key, Object lastObject) {
+        if (key == null || key.isEmpty() || lastObject == null) return null;
         // If dont have more child nodes, return the wanted value of the key.
         if (isLastNode(key)) return convertToLinkedHashMap(lastObject).get(key);
 
@@ -25,16 +44,35 @@ public class YAMLNode implements Node {
         return get(getNextNodeBlock(key), convertToLinkedHashMap(lastObject).get(getFirstKeyNode(key)));
     }
 
+    /**
+     * Set the value of a key node.
+     * To separate node from another node, you can use '.'.
+     * This create all the key node block.
+     * Example:
+     * You want to create 'chat.en.messages.join' with the value
+     * The method search if exists parents of join, if not,
+     * create it and put join with value.
+     * You can use the following type of value objects:
+     * <p><ul>
+     * <li>Integer</li>
+     * <li>Long</li>
+     * <li>Float</li>
+     * <li>Double</li>
+     * <li>Character</li>
+     * <li>String</li>
+     * <li>ArrayList{@literal <Object>}</li>
+     * </ul><p>
+     *
+     * @param key    key node
+     * @param object object value
+     */
     @Override
     public void set(String key, Object object) {
-        throw new NotImplementedException();
-        /*
-        if (key.split(".").length == 1) {
-            map.put(key, object);
-        }
+        // If dont have any to add, dont do nothing.
+        if (key == null || key.isEmpty() || object == null) return;
 
-        convertToLinkedHashMap(get(key, map)).put(key, object);
-        */
+        LinkedHashMap<Object, Object> map = addChild(getKeyNodeWithoutLastNode(key));
+        map.put(getLastKeyNode(key), object);
     }
 
     @Override
@@ -48,11 +86,7 @@ public class YAMLNode implements Node {
     }
 
     public LinkedHashMap<Object, Object> convertToLinkedHashMap(Object object) {
-        if (!(object instanceof LinkedHashMap)) {
-            System.out.println(object);
-            System.out.println(object.getClass().getName());
-            return null;
-        }
+        if (!(object instanceof LinkedHashMap)) return null;
         return (LinkedHashMap<Object, Object>) object;
     }
 
@@ -67,7 +101,6 @@ public class YAMLNode implements Node {
     }
 
     private boolean existKey(String key, LinkedHashMap<Object, Object> object) {
-
         // Comprobamos que el objeto pasado por parametro tenga valor
         if (object == null) return false;
 
@@ -81,45 +114,6 @@ public class YAMLNode implements Node {
         return existKey(getNextNodeBlock(key), convertToLinkedHashMap(object.get(getFirstKeyNode(key))));
     }
 
-    private String getNextNodeBlock(String key) {
-        // If key is null or empty return null
-        if (key == null || key.isEmpty()) return null;
-
-        // If key dont contains '.', dont have more nodes.
-        if (!key.contains(".")) return null;
-
-        // Returns the key starting with the node following the first point
-        return key.substring(key.indexOf(".") + 1);
-    }
-
-    private String getFirstKeyNode(String key) {
-        // If key is null or empty return null
-        if (key == null || key.isEmpty()) return null;
-
-        if (!key.contains(".")) return key;
-
-        return key.substring(0, key.indexOf("."));
-    }
-
-    private boolean isLastNode(String key) {
-        // If key is null or empty return false
-        if (key == null || key.isEmpty()) return false;
-        return !key.contains(".");
-    }
-
-    private boolean containsTwoNodes(String key) {
-        // If key is null or empty return false
-        if (key == null || key.isEmpty()) return false;
-        return key.split(".").length == 2;
-    }
-
-    private boolean containsMultipleNodes(String key) {
-        // If key is null or empty return false
-        if (key == null || key.isEmpty()) return false;
-        if (!key.contains(".")) return false;
-        return key.split(".").length > 1;
-    }
-
     private LinkedHashMap<Object, Object> addChild(String key) {
         return addChild(key, map);
     }
@@ -128,18 +122,21 @@ public class YAMLNode implements Node {
         // If key is null or empty, or parent is null, returned null.
         if (key == null || key.isEmpty() || parent == null) return null;
 
-        // If is the last key node and the key node exist, return the linkedhashmap.
-        if (isLastNode(key) && parent.get(getFirstKeyNode(key)) != null) return convertToLinkedHashMap(parent.get(getFirstKeyNode(key)));
+
+        // If is the last key node and the key node exist, return the LinkedHashMap.
+        if (isLastNode(key) && parent.get(getFirstKeyNode(key)) != null) return convertToLinkedHashMap(parent.get(key));
 
         // If is the last key node and the key node dont exist, return new LinkedHashMap.
-        if (isLastNode(key) && parent.get(getFirstKeyNode(key)) == null) return new LinkedHashMap<>();
+
+        if (isLastNode(key) && parent.get(getFirstKeyNode(key)) == null) {
+            return addNewLinkedHashMapChild(key, parent);
+        }
 
         // If the key node exist, return the call of this method creating next key node
         if (parent.get(getFirstKeyNode(key)) != null) return addChild(getNextNodeBlock(key), convertToLinkedHashMap(parent.get(getFirstKeyNode(key))));
 
         // If the key node dont exist, create new LinkedHashMap and call to the method addChillWithoutAskingIfExist
         return addChillWithoutAskingIfExist(key, parent);
-
 
     }
 
@@ -152,5 +149,4 @@ public class YAMLNode implements Node {
         parent.put(getFirstKeyNode(key), newMap);
         return newMap;
     }
-
 }

@@ -2,20 +2,14 @@ package me.cerratolabs.io.file.configloader.configuration.adapters.properties;
 
 import lombok.Getter;
 import me.cerratolabs.io.file.configloader.ConfigLoader;
-import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YAMLFileLoader;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
 /**
- * Example class for another ConfigLoaderManager
+ * Example class for another ConfigManager
  */
 public class PropertiesManager implements ConfigManager {
 
     @Getter private String name = "Properties";
-
-    @Override
-    public YAMLFileLoader parse(String path) {
-        return new YAMLFileLoader(path);
-    }
 
     @Override
     public boolean matches(String path) {
@@ -26,5 +20,4 @@ public class PropertiesManager implements ConfigManager {
     public ConfigLoader getConfig(String path) {
         throw new RuntimeException("Not implemented yet!");
     }
-
 }

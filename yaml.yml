@@ -1,3 +1,4 @@
+creation-date: 2020-04-07T19:30:26.364Z
 chat:
   prefix: ''
   messages:
@@ -12,5 +13,9 @@ chat:
             invalid: Wrong params.
             not-found: [The have performed a command that doesn't exists., 'You can
                 see the list of commands with: /help']
+            pepephone: [1, 5]
 players:
-  Nurio: {id: 1}
+  Nurio: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 1, login-counts: 5}
+  Katakurinna: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 2, login-counts: 5}
+  David: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 3, login-counts: 1}
+  Akane: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 4, login-counts: 1}

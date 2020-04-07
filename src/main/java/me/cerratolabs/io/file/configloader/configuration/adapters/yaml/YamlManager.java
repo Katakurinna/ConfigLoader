@@ -8,19 +8,25 @@ public class YamlManager implements ConfigManager {
 
     @Getter private String name = "YAML";
 
-    @Override
-    public YAMLFileLoader parse(String path) {
-        return new YAMLFileLoader(path);
-    }
-
+    /**
+     * If path match with yaml extension
+     * @param path file path.
+     * @return if is yaml extension or not
+     */
     @Override
     public boolean matches(String path) {
         return path.endsWith(".yaml") || path.endsWith(".yml");
     }
 
+    /**
+     * Return new instance of ConfigLoader.
+     * @param path file path.
+     * @return ConfigLoader instance.
+     */
     @Override
     public ConfigLoader getConfig(String path) {
-        return new ConfigLoader(new YAMLFileLoader(path), new YAMLNode());
+        YAMLNode node = new YAMLNode();
+        return new ConfigLoader(new YAMLFileLoader(path, node), node);
     }
 
 }

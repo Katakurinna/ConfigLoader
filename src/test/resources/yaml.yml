@@ -1,26 +1,20 @@
-creation-date: HOLA
+creation-date: 2020-04-07T19:30:26.364Z
 chat:
-  prefix: ""
+  prefix: ''
   messages:
     es:
       user:
-        join:
-          game: "%s joined the game"
-          party: "%s joined the party"
-          world: "%s joined the world"
-        leave:
-          game: "%s left the game"
-          party: "%s left the party"
-          world: "%s left the world"
+        join: {game: '%s joined the game', party: '%s joined the party', world: '%s
+            joined the world'}
+        leave: {game: '%s left the game', party: '%s left the party', world: '%s left
+            the world'}
         errors:
           commands:
-            invalid: "Wrong params."
-            not-found:
-              - "The have performed a command that doesn't exists."
-              - "You can see the list of commands with: /help"
-            pepephone:
-              - 1
-              - 5
+            invalid: Wrong params.
+            not-found: [The have performed a command that doesn't exists., 'You can
+                see the list of commands with: /help']
+            pepephone: [1, 5]
 players:
-  Nurio:
-    id: 1
+  Nurio: {id: 1}
+  Katakurinna: {last-login: !!timestamp '2020-04-07T19:52:51.231Z', id: 5, login-counts: 2}
+

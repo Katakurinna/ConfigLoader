@@ -1,5 +1,6 @@
 package me.cerratolabs.io.file.configloader;
 
+import lombok.Getter;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigFileLoader;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.nodes.Node;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -8,8 +9,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class ConfigLoader {
-    private ConfigFileLoader loader;
-    private Node node;
+    @Getter private ConfigFileLoader loader;
+    @Getter private Node node;
 
     public ConfigLoader(ConfigFileLoader loader, Node node) {
         this.loader = loader;
@@ -46,7 +47,6 @@ public class ConfigLoader {
         if (key == null || key.isEmpty()) throw new NullPointerException("Param 'key' is null or empty");
         if (value == null) throw new NullPointerException("Param 'value' is null");
         node.set(key, value);
-
     }
 
     /**
@@ -77,4 +77,7 @@ public class ConfigLoader {
         return node.getKeyList();
     }
 
+    public boolean existKey(String key) {
+        return node.existKey(key);
+    }
 }

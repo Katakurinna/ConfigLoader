@@ -34,12 +34,10 @@ public class ConfigFactory {
      * @throws NullPointerException     d
      */
     public static ConfigLoader getConfigLoader(String path) throws NullPointerException, IllegalArgumentException, IOException {
-        ConfigLoader cfg = createConfigLoader(path);
-        cfg.load();
-        return cfg;
+        return searchConfigLoader(path);
     }
 
-    public static ConfigLoader createConfigLoader(String path) throws NullPointerException, IllegalArgumentException {
+    public static ConfigLoader searchConfigLoader(String path) throws NullPointerException, IllegalArgumentException {
         if (path == null || path.isEmpty()) throw new NullPointerException("path parameter is null.");
 
         ConfigManager manager = (ConfigManager) configComparators.stream().filter(comparator -> comparator.matches(path)).findFirst().orElse(null);
