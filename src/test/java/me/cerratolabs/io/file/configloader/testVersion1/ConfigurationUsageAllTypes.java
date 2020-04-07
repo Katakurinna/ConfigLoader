@@ -14,21 +14,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ConfigurationUsageAllTypes {
     private static ConfigLoader loader;
 
-    private static String getResource(String path) {
-        try {
-            return ConfigurationUsageYAMLNode.class.getClassLoader().getResource(path).toString().substring(6);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     @Test
     @BeforeAll
     public static void getConfigLoaderAndLoad() throws IOException {
         loader = ConfigFactory.getConfigLoader("yaml.yml");
         assertEquals(ConfigLoader.class, loader.getClass());
-        assertEquals(null, loader.getMap());
+        assertNull(loader.getMap());
         loader.load();
         assertEquals(LinkedHashMap.class, loader.getMap().getClass());
     }
@@ -72,7 +63,7 @@ public class ConfigurationUsageAllTypes {
         assertEquals(LinkedHashMap.class, loader.get(key).getClass());
 
         key = "chat.messages.es.user.errors.commands.not-exist-node";
-        assertEquals(null, loader.get(key));
+        assertNull( loader.get(key));
 
         key = "players.Nurio.id";
         assertEquals(1, loader.get(key));
@@ -88,8 +79,7 @@ public class ConfigurationUsageAllTypes {
     @Order(4)
     public void setSomeValues() {
         String key = "players.Akane.id";
-        int id = 5;
-        loader.set(key, id);
+        loader.set(key, 5);
 
         key = "players.Akane.last-login";
         date = new Date();
