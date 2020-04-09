@@ -4,6 +4,8 @@ package me.cerratolabs.io.file.configloader.utils;
  * This class is used to obtain different types of node,
  * or check their existence or use.
  *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  * @see me.cerratolabs.io.file.configloader.configuration.interfaces.nodes.Node
  */
 public class KeyManager {

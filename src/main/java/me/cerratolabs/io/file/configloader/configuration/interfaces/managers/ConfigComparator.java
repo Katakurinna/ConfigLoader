@@ -2,6 +2,9 @@ package me.cerratolabs.io.file.configloader.configuration.interfaces.managers;
 
 /**
  * This interface is used to create comparators.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public interface ConfigComparator {
     /**

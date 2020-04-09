@@ -10,6 +10,9 @@ import static me.cerratolabs.io.file.configloader.utils.KeyManager.*;
 
 /**
  * Class used to handle the yaml file map.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public class YAMLNode implements Node {
 

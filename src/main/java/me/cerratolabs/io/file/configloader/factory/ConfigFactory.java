@@ -13,6 +13,8 @@ import java.util.List;
  * This class is used to register comparators
  * and use them to get ConfigLoaders.
  *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  * @see ConfigLoader
  */
 public class ConfigFactory {

@@ -8,6 +8,9 @@ import java.io.*;
 
 /**
  * Class to save and load yaml files.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public class YAMLFileLoader implements ConfigFileLoader {
 

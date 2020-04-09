@@ -6,6 +6,9 @@ import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.Con
 
 /**
  * Example class for another ConfigManager
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public class PropertiesManager implements ConfigManager {
 

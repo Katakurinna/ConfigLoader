@@ -11,6 +11,9 @@ import java.util.List;
 /**
  * This class is used to control the file,
  * regardless of how each loader or node does things.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public class ConfigLoader {
     @Getter private ConfigFileLoader loader;

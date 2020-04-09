@@ -4,6 +4,9 @@ import me.cerratolabs.io.file.configloader.ConfigLoader;
 
 /**
  * This interface is used to define managers.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public interface ConfigManager extends ConfigComparator {
 

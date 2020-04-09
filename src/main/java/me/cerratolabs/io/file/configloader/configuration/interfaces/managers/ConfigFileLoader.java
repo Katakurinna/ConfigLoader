@@ -5,6 +5,9 @@ import java.io.IOException;
 
 /**
  * This interface is used to define loaders.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public interface ConfigFileLoader {
 

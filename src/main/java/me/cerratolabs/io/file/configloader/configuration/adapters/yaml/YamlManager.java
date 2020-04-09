@@ -10,6 +10,9 @@ import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.Con
  * to it, and of returning a new instance.
  * This class handles files of type YAML.
  * To recognize that it is a yaml file, it must end in {@code .yaml} or {@code .yml}.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public class YamlManager implements ConfigManager {
 

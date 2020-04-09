@@ -4,6 +4,9 @@ import java.util.List;
 
 /**
  * This interface is used to define the logic of nodes.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
  */
 public interface Node {
 
