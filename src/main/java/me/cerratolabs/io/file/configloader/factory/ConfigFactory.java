@@ -6,18 +6,33 @@ import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YamlManag
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used to register comparators
+ * and use them to get ConfigLoaders.
+ *
+ * @see ConfigLoader
+ */
 public class ConfigFactory {
 
     private static List<ConfigComparator> configComparators = new ArrayList<>();
 
+    /**
+     * Register a new comparator
+     *
+     * @param comparator ConfigComparator instance to register.
+     * @see ConfigComparator
+     * Examples:
+     * @see YamlManager
+     * @see PropertiesManager
+     */
     public static void registerComparator(ConfigComparator comparator) {
         configComparators.add(comparator);
     }
 
+    /* Register new comparators automatically. */
     static {
         registerComparator(new YamlManager());
         registerComparator(new PropertiesManager());
@@ -31,12 +46,23 @@ public class ConfigFactory {
      * @param path path with the path of the file you want to use or create.
      * @return Ready-to-use ConfigFile instance.
      * @throws IllegalArgumentException Throw the exception if you don't allow the file format passed by parameter.
-     * @throws NullPointerException     d
+     * @throws NullPointerException     If path is null or empty.
      */
-    public static ConfigLoader getConfigLoader(String path) throws NullPointerException, IllegalArgumentException, IOException {
+    public static ConfigLoader getConfigLoader(String path) throws NullPointerException, IllegalArgumentException {
         return searchConfigLoader(path);
     }
 
+    /**
+     * Search if there is a ConfigLoader compatible with the file,
+     * based on the criteria of each ConfigComparator.
+     *
+     * @param path file you want to work with
+     * @return Ready-to-use ConfigFile instance.
+     * @throws IllegalArgumentException Throw the exception if you don't allow the file format passed by parameter.
+     * @throws NullPointerException     If path is null or empty.
+     * @see ConfigLoader
+     * @see ConfigManager
+     */
     public static ConfigLoader searchConfigLoader(String path) throws NullPointerException, IllegalArgumentException {
         if (path == null || path.isEmpty()) throw new NullPointerException("path parameter is null.");
 
@@ -45,5 +71,4 @@ public class ConfigFactory {
 
         return manager.getConfig(path);
     }
-
 }
