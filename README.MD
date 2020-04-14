@@ -46,6 +46,7 @@ String chocolateDescription = (String) loader.get("cookie.ingredients.chocolate.
 ```
 
 The get method does not return a copy, so any changes made will have a direct effect on the ConfigLoader
+If the node does not exist, it returns null.
 
 ### Adding new node
 Whether you have nodes created or not, the set method allows you to add new nodes.
@@ -57,6 +58,13 @@ String chocolateDescription = "Chocolate is a preparation of roasted and ground 
 loader.set("cookie.ingredients.chocolate.description",chocolateDescription);
 ```
 In this way, we will have created all the previous nodes simply adding descriptions to the chocolate.
+
+### Saving to file
+When we have finished adding elements, and we want to save it in the file, we can do it in the following way:
+```java
+loader.save();
+```
+Once this is done, the file will contain the new nodes.
 ## Working actually
  - Save/load files from/to YAML
  - Get/Set to yaml files.
