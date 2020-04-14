@@ -47,6 +47,16 @@ String chocolateDescription = (String) loader.get("cookie.ingredients.chocolate.
 
 The get method does not return a copy, so any changes made will have a direct effect on the ConfigLoader
 
+### Adding new node
+Whether you have nodes created or not, the set method allows you to add new nodes.
+Whether you want to add a child or a parent, it will create the necessary nodes to be able to add the desired one.
+Its use is similar to the get method, since the way to differentiate nodes is using '.'.
+If for example we only have the cookie node, and we want to add a description to the chocolate description node, without having chocolate created, we can do it in the following way:
+```java
+String chocolateDescription = "Chocolate is a preparation of roasted and ground cacao seeds that is made in the form of a liquid, paste, or in a block, which may also be used as a flavoring ingredient in other foods.";
+loader.set("cookie.ingredients.chocolate.description",chocolateDescription);
+```
+In this way, we will have created all the previous nodes simply adding descriptions to the chocolate.
 ## Working actually
  - Save/load files from/to YAML
  - Get/Set to yaml files.
