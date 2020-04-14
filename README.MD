@@ -27,6 +27,25 @@ In order to add it to the ConfigFactory list, you just have to call the 'registe
 ```java
 ConfigFactory.registerComparator(new UnknownExtensionManager());
 ```
+### Loading a file
+Once we have the instance of ConfigLoader, we can load the file and send it to the ConfigFactory by parameter.
+```java
+loader.load();
+```
+Once this is done, we will have the file loaded in memory, in order to add nodes to the file.
+
+### Getting a node
+When you already have the file loaded, the way to get parts of it is with the get method of the loader get (key)
+The way to go to a child node, is using '.', That is, to go from the parent node cookie, to the node node chocolate, we will have to do: 'cookie.ingredients.chocolate'
+```java
+Chocolate chocolate =(Chocolate) loader.get("cookie.ingredients.chocolate");
+```
+We can even go deeper, and get the description of this
+```java
+String chocolateDescription =(String) loader.get("cookie.ingredients.chocolate.description");
+```
+
+The get method does not return a copy, so any changes made will have a direct effect on the ConfigLoader
 
 ## Working actually
  - Save/load files from/to YAML
