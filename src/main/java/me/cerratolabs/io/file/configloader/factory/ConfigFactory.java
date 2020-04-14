@@ -69,8 +69,17 @@ public class ConfigFactory {
         if (path == null || path.isEmpty()) throw new NullPointerException("path parameter is null.");
 
         ConfigManager manager = (ConfigManager) configComparators.stream().filter(comparator -> comparator.matches(path)).findFirst().orElse(null);
-        if (manager == null) throw new IllegalArgumentException("ConfigFactory dont have the file extension you want");
+        if (manager == null) throw new IllegalArgumentException("ConfigFactory dont have the file extension you want (" + getExtension(path) +").");
 
         return manager.getConfig(path);
+    }
+
+    /**
+     * Get file extension.
+     * @param path file path
+     * @return extension.
+     */
+    private static String getExtension(String path){
+        return path.substring(path.lastIndexOf("."));
     }
 }
