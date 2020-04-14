@@ -16,7 +16,7 @@ import static me.cerratolabs.io.file.configloader.utils.KeyManager.*;
  */
 public class YAMLNode implements Node {
 
-    private LinkedHashMap<Object, Object> map;
+    private LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
 
     /**
      * Get the value of a key node.
