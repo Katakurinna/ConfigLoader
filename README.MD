@@ -3,7 +3,9 @@
 ----
 This project has been created by Alejandro Cerrato Espejo to be presented as PI ( end-of-degree project)  at the end of his studies.
 ----
-
+## Releases
+ - Currently release: [v1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.0.0)
+  - Last release: [v1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.0.0)
 ## Working actually
  - Save/load files from/to YAML
  - Get/Set to yaml files.
