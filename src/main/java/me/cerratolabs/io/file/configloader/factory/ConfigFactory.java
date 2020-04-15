@@ -2,7 +2,7 @@ package me.cerratolabs.io.file.configloader.factory;
 
 import me.cerratolabs.io.file.configloader.ConfigLoader;
 import me.cerratolabs.io.file.configloader.configuration.adapters.properties.PropertiesManager;
-import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YamlManager;
+import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YAMLManager;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
@@ -27,7 +27,7 @@ public class ConfigFactory {
      * @param comparator ConfigComparator instance to register.
      * @see ConfigComparator
      * Examples:
-     * @see YamlManager
+     * @see YAMLManager
      * @see PropertiesManager
      */
     public static void registerComparator(ConfigComparator comparator) {
@@ -36,7 +36,7 @@ public class ConfigFactory {
 
     /* Register new comparators automatically. */
     static {
-        registerComparator(new YamlManager());
+        registerComparator(new YAMLManager());
         registerComparator(new PropertiesManager());
     }
 

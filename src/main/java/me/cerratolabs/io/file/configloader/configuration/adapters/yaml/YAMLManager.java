@@ -5,7 +5,7 @@ import me.cerratolabs.io.file.configloader.ConfigLoader;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigManager;
 
 /**
- * {@code YamlManager} takes care of checking if
+ * {@code YAMLManager} takes care of checking if
  * any extension in the ConfigFactory list belongs
  * to it, and of returning a new instance.
  * This class handles files of type YAML.
@@ -14,7 +14,7 @@ import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.Con
  * @author Alejandro '@Katakurinna' Cerrato Espejo
  * @version 1.0.0
  */
-public class YamlManager implements ConfigManager {
+public class YAMLManager implements ConfigManager {
 
     @Getter private String name = "YAML";
 
