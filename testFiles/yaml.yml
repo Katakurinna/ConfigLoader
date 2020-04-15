@@ -18,4 +18,4 @@ players:
   Nurio: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 1, login-counts: 5}
   Katakurinna: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 2, login-counts: 5}
   David: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 3, login-counts: 1}
-  Akane: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 4, login-counts: 1}
+  Akane: {last-login: !!timestamp '2020-04-07T19:55:20.486Z', id: 5, login-counts: 2}
