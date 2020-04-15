@@ -1,5 +1,6 @@
 # ConfigLoader
-### Library to load / save fully configurable configuration ###
+### Library to load / save configuration ###
+#### Fully configurable ####
 ----
 This project has been created by Alejandro Cerrato Espejo to be presented as PI ( end-of-degree project)  at the end of his studies.
 ----
