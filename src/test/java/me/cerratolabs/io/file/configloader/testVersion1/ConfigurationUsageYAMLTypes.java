@@ -19,7 +19,6 @@ public class ConfigurationUsageYAMLTypes {
     public static void getConfigLoaderAndLoad() throws IOException {
         loader = ConfigFactory.getConfigLoader("yaml.yml");
         assertEquals(ConfigLoader.class, loader.getClass());
-        assertNull(loader.getMap());
         loader.load();
         assertEquals(LinkedHashMap.class, loader.getMap().getClass());
     }
@@ -105,7 +104,7 @@ public class ConfigurationUsageYAMLTypes {
         assertEquals(date.getTime(), ((Date) loader.get(key)).getTime());
 
         key = "players.Akane.login-counts";
-        assertEquals(1, loader.get(key));
+        assertEquals(2, loader.get(key));
     }
 
     @Test
