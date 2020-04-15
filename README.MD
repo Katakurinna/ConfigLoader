@@ -1,15 +1,36 @@
 # ConfigLoader
-### Library to load / save fully configurable configuration ###
+### Library to load / save configuration ###
+#### Fully configurable ####
 ----
 This project has been created by Alejandro Cerrato Espejo to be presented as PI ( end-of-degree project)  at the end of his studies.
 ----
 ## Releases
- - Currently release: [v1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.0.0)
-  - Last release: [v1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.0.0)
+
+ - Last release: [v1.5.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.5.0)
+ - [Version 1.5.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.5.0)
+ - [Version 1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/1.0.0)
   
 ## How to use
 ConfigLoader allows you to handle any type of configuration files, it can do it automatically from the ConfigFactory
 in which it returns an instance to use that file, or create your own ConfigManager in charge of handling everything.
+### Maven Dependencies
+#### YAML
+```
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.21</version>
+</dependency>
+```
+
+#### JSON
+```
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20190722</version>
+</dependency>
+```
 ### Create a new ConfigLoader instance
 With the following code, we will obtain an instance of ConfigLoader thanks to the ConfigFactory class, which is automatically in charge of reviewing if the file is among the allowed extensions.
 ```java
