@@ -1,6 +1,7 @@
 package me.cerratolabs.io.file.configloader.factory;
 
 import me.cerratolabs.io.file.configloader.ConfigLoader;
+import me.cerratolabs.io.file.configloader.configuration.adapters.json.JSONManager;
 import me.cerratolabs.io.file.configloader.configuration.adapters.properties.PropertiesManager;
 import me.cerratolabs.io.file.configloader.configuration.adapters.yaml.YAMLManager;
 import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.ConfigComparator;
@@ -38,6 +39,7 @@ public class ConfigFactory {
     static {
         registerComparator(new YAMLManager());
         registerComparator(new PropertiesManager());
+        registerComparator(new JSONManager());
     }
 
     /**
@@ -69,17 +71,18 @@ public class ConfigFactory {
         if (path == null || path.isEmpty()) throw new NullPointerException("path parameter is null.");
 
         ConfigManager manager = (ConfigManager) configComparators.stream().filter(comparator -> comparator.matches(path)).findFirst().orElse(null);
-        if (manager == null) throw new IllegalArgumentException("ConfigFactory dont have the file extension you want (" + getExtension(path) +").");
+        if (manager == null) throw new IllegalArgumentException("ConfigFactory dont have the file extension you want (" + getExtension(path) + ").");
 
         return manager.getConfig(path);
     }
 
     /**
      * Get file extension.
+     *
      * @param path file path
      * @return extension.
      */
-    private static String getExtension(String path){
+    private static String getExtension(String path) {
         return path.substring(path.lastIndexOf("."));
     }
 }
