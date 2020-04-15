@@ -11,7 +11,8 @@ This project has been created by Alejandro Cerrato Espejo to be presented as PI 
  - [Version 1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/1.0.0)
   
 ## How to use
-
+ConfigLoader allows you to handle any type of configuration files, it can do it automatically from the ConfigFactory
+in which it returns an instance to use that file, or create your own ConfigManager in charge of handling everything.
 ### Maven Dependencies
 #### YAML
 ```
@@ -30,8 +31,6 @@ This project has been created by Alejandro Cerrato Espejo to be presented as PI 
     <version>20190722</version>
 </dependency>
 ```
-ConfigLoader allows you to handle any type of configuration files, it can do it automatically from the ConfigFactory
-in which it returns an instance to use that file, or create your own ConfigManager in charge of handling everything.
 ### Create a new ConfigLoader instance
 With the following code, we will obtain an instance of ConfigLoader thanks to the ConfigFactory class, which is automatically in charge of reviewing if the file is among the allowed extensions.
 ```java
