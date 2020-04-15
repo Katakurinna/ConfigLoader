@@ -21,7 +21,7 @@ public class YAMLManager implements ConfigManager {
     /**
      * If path match with yaml extension,
      * return true, else, false.
-     *
+     * Ignore if it is uppercase / lowercase.
      * @param path file path.
      * @return if is yaml extension or not (end with .yaml or .yml)
      */
