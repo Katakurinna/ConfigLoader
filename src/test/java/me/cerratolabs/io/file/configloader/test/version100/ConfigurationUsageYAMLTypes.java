@@ -10,6 +10,10 @@ import java.util.LinkedHashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
+ */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ConfigurationUsageYAMLTypes {
     private static ConfigLoader loader;
@@ -62,7 +66,7 @@ public class ConfigurationUsageYAMLTypes {
         assertEquals(LinkedHashMap.class, loader.get(key).getClass());
 
         key = "chat.messages.es.user.errors.commands.not-exist-node";
-        assertNull( loader.get(key));
+        assertNull(loader.get(key));
 
         key = "players.Nurio.id";
         assertEquals(1, loader.get(key));

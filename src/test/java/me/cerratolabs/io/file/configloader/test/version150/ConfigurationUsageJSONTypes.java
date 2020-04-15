@@ -7,10 +7,13 @@ import org.junit.jupiter.api.*;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.5.0
+ */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ConfigurationUsageJSONTypes {
     private static ConfigLoader loader;

@@ -15,7 +15,7 @@ import java.nio.file.Paths;
  * Class to save and load yaml files.
  *
  * @author Alejandro '@Katakurinna' Cerrato Espejo
- * @version 1.0.0
+ * @version 1.5.0
  */
 public class JSONFileLoader implements ConfigFileLoader {
 

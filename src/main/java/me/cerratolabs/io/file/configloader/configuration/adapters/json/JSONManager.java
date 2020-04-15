@@ -12,7 +12,7 @@ import me.cerratolabs.io.file.configloader.configuration.interfaces.managers.Con
  * To recognize that it is a JSON file, it must end in {@code .json}.
  *
  * @author Alejandro '@Katakurinna' Cerrato Espejo
- * @version 1.0.0
+ * @version 1.5.0
  */
 public class JSONManager implements ConfigManager {
 

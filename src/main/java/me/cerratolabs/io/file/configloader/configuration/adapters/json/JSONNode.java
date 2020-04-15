@@ -10,7 +10,7 @@ import java.util.HashMap;
  * operation is exactly the same as in the other class.
  *
  * @author Alejandro '@Katakurinna' Cerrato Espejo
- * @version 1.0.0
+ * @version 1.5.0
  */
 public class JSONNode extends GenericNode {
 
