@@ -9,6 +9,12 @@ import java.util.Map;
 
 import static me.cerratolabs.io.file.configloader.utils.KeyManager.*;
 
+/**
+ * Class used to handle generic file map's.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
+ */
 public class GenericNode implements Node {
 
     protected Map<Object, Object> map;

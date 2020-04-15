@@ -10,8 +10,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Map;
 
+/**
+ * Class to save and load yaml files.
+ *
+ * @author Alejandro '@Katakurinna' Cerrato Espejo
+ * @version 1.0.0
+ */
 public class JSONFileLoader implements ConfigFileLoader {
 
     /* Class variables to use yaml */
