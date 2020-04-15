@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ConfigurationUsageAllTypes {
+public class ConfigurationUsageYAMLTypes {
     private static ConfigLoader loader;
 
     @Test
