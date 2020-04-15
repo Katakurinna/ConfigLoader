@@ -4,8 +4,10 @@
 This project has been created by Alejandro Cerrato Espejo to be presented as PI ( end-of-degree project)  at the end of his studies.
 ----
 ## Releases
- - Currently release: [v1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.0.0)
-  - Last release: [v1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.0.0)
+
+ - Last release: [v1.5.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.5.0)
+ - [Version 1.5.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/v1.5.0)
+ - [Version 1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/1.0.0)
   
 ## How to use
 ConfigLoader allows you to handle any type of configuration files, it can do it automatically from the ConfigFactory
