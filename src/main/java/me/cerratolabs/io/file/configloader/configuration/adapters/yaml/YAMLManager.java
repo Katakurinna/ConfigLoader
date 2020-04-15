@@ -27,7 +27,7 @@ public class YAMLManager implements ConfigManager {
      */
     @Override
     public boolean matches(String path) {
-        return path.endsWith(".yaml") || path.endsWith(".yml");
+        return path.toLowerCase().endsWith(".yaml") || path.toLowerCase().endsWith(".yml");
     }
 
     /**
