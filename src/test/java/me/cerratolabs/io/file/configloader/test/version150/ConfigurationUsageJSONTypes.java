@@ -1,4 +1,4 @@
-package me.cerratolabs.io.file.configloader.testVersion1;
+package me.cerratolabs.io.file.configloader.test.version150;
 
 import me.cerratolabs.io.file.configloader.ConfigLoader;
 import me.cerratolabs.io.file.configloader.factory.ConfigFactory;
@@ -6,21 +6,22 @@ import org.junit.jupiter.api.*;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ConfigurationUsageYAMLTypes {
+public class ConfigurationUsageJSONTypes {
     private static ConfigLoader loader;
 
     @Test
     @BeforeAll
     public static void getConfigLoaderAndLoad() throws IOException {
-        loader = ConfigFactory.getConfigLoader("yaml.yml");
+        loader = ConfigFactory.getConfigLoader("file.json");
         assertEquals(ConfigLoader.class, loader.getClass());
         loader.load();
-        assertEquals(LinkedHashMap.class, loader.getMap().getClass());
+        assertEquals(HashMap.class, loader.getMap().getClass());
     }
 
     @Test
@@ -59,10 +60,10 @@ public class ConfigurationUsageYAMLTypes {
         assertEquals("Wrong params.", loader.get(key));
 
         key = "chat.messages.es.user.errors.commands";
-        assertEquals(LinkedHashMap.class, loader.get(key).getClass());
+        assertEquals(HashMap.class, loader.get(key).getClass());
 
         key = "chat.messages.es.user.errors.commands.not-exist-node";
-        assertNull( loader.get(key));
+        assertNull(loader.get(key));
 
         key = "players.Nurio.id";
         assertEquals(1, loader.get(key));
@@ -104,7 +105,7 @@ public class ConfigurationUsageYAMLTypes {
         assertEquals(date.getTime(), ((Date) loader.get(key)).getTime());
 
         key = "players.Akane.login-counts";
-        assertEquals(2, loader.get(key));
+        assertEquals(3, loader.get(key));
     }
 
     @Test
