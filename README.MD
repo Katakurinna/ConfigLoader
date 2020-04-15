@@ -11,6 +11,25 @@ This project has been created by Alejandro Cerrato Espejo to be presented as PI 
  - [Version 1.0.0](https://github.com/Katakurinna/ConfigLoader/releases/tag/1.0.0)
   
 ## How to use
+
+### Maven Dependencies
+#### YAML
+```
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.21</version>
+</dependency>
+```
+
+#### JSON
+```
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20190722</version>
+</dependency>
+```
 ConfigLoader allows you to handle any type of configuration files, it can do it automatically from the ConfigFactory
 in which it returns an instance to use that file, or create your own ConfigManager in charge of handling everything.
 ### Create a new ConfigLoader instance
