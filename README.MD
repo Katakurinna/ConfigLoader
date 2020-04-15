@@ -67,13 +67,13 @@ loader.save();
 Once this is done, the file will contain the new nodes.
 ## Working actually
  - Save/load files from/to YAML
+ - Save/load files from/to JSON
  - Get/Set to yaml files.
  
  - Create generic config loader / saver
  - Continue the configuration file wherever you want.
 
 ## TODO - Save/Load
- - Save/load files from/to JSON
  - Save/load files from/to PROPERTIES
  - Permit encrypt/decrypt configuration (multiple types).
  - Load/Save from binary/character files.
