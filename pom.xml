@@ -7,6 +7,8 @@
     <groupId>me.cerratolabs</groupId>
     <artifactId>configloader</artifactId>
     <version>1.5.0</version>
+
+    <!-- Dependencies -->
     <dependencies>
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -49,9 +51,9 @@
             <artifactId>json</artifactId>
             <version>20190722</version>
         </dependency>
-
     </dependencies>
 
+    <!-- Compiler target/source -->
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -59,6 +61,8 @@
 
     <build>
         <plugins>
+
+            <!-- Maven Jar Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -70,6 +74,8 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -78,6 +84,27 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <!-- Assembly plugin -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 </project>
