@@ -91,7 +91,7 @@ public class ConfigurationUsageJSONTypes {
 
         key = "players.Akane.login-counts";
         Integer i = (Integer) loader.get(key);
-        i = (i == null) ? 1 : i.intValue() + 1;
+        i = (i == null) ? 1 : i + 1;
         loader.set(key, i);
 
     }
@@ -108,7 +108,7 @@ public class ConfigurationUsageJSONTypes {
         assertEquals(date.getTime(), ((Date) loader.get(key)).getTime());
 
         key = "players.Akane.login-counts";
-        assertEquals(5, loader.get(key));
+        assertEquals(7, loader.get(key));
     }
 
     @Test
