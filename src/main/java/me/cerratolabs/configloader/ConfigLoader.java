@@ -1,8 +1,8 @@
 package me.cerratolabs.configloader;
 
 import lombok.Getter;
-import me.cerratolabs.configloader.configuration.interfaces.nodes.Node;
 import me.cerratolabs.configloader.configuration.interfaces.managers.ConfigFileLoader;
+import me.cerratolabs.configloader.configuration.interfaces.nodes.Node;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
@@ -16,8 +16,10 @@ import java.util.List;
  * @version 1.0.0
  */
 public class ConfigLoader {
-    @Getter private ConfigFileLoader loader;
-    @Getter private Node node;
+    @Getter
+    private ConfigFileLoader loader;
+    @Getter
+    private Node node;
 
     /**
      * Create new instance of ConfigLoader with ConfigFileLoader and Node
@@ -99,6 +101,30 @@ public class ConfigLoader {
     public Object get(String key) {
         if (key == null || key.isEmpty()) throw new NullPointerException("Param 'key' is null or empty");
         return node.get(key);
+    }
+
+    /**
+     * Get the value of a key node.
+     * The method can return the following objects types:
+     * <p><ul>
+     * <li>Integer</li>
+     * <li>Long</li>
+     * <li>Float</li>
+     * <li>Double</li>
+     * <li>Character</li>
+     * <li>String</li>
+     * <li>ArrayList{@literal <Object>}</li>
+     * </ul><p>
+     *
+     * @param key key node
+     * @param defaultValue default value
+     * @return Object or defaultValue if not exist.
+     */
+    public Object get(String key, Object defaultValue) {
+        if (key == null || key.isEmpty()) throw new NullPointerException("Param 'key' is null or empty");
+        Object obj = node.get(key);
+        // If obj is null, return default value.
+        return (obj != null) ? obj : defaultValue;
     }
 
     /**
