@@ -7,13 +7,14 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class is used to control the file,
  * regardless of how each loader or node does things.
  *
  * @author Alejandro '@Katakurinna' Cerrato Espejo
- * @version 1.0.0
+ * @version 1.5.0
  */
 public class ConfigLoader {
     @Getter
@@ -133,7 +134,9 @@ public class ConfigLoader {
      * @param configFile {@link ConfigLoader} to add.
      */
     public void append(ConfigLoader configFile) {
-        throw new NotImplementedException();
+        Map map = (Map) node.getMap();
+        Map newMap = (Map) configFile.getMap();
+        map.putAll(newMap);
     }
 
     /**

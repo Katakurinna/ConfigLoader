@@ -21,7 +21,7 @@ public class ConfigurationUsageYAMLTypes {
     @Test
     @BeforeAll
     public static void getConfigLoaderAndLoad() throws IOException {
-        loader = ConfigFactory.getConfigLoader("yaml.yml");
+        loader = ConfigFactory.getConfigLoader("testFiles\\yaml.yml");
         assertEquals(ConfigLoader.class, loader.getClass());
         loader.load();
         assertEquals(LinkedHashMap.class, loader.getMap().getClass());

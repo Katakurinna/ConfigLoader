@@ -1,7 +1,6 @@
 package me.cerratolabs.configloader.factory;
 
 import me.cerratolabs.configloader.ConfigLoader;
-import me.cerratolabs.configloader.configuration.adapters.csv.CSVManager;
 import me.cerratolabs.configloader.configuration.adapters.json.JSONManager;
 import me.cerratolabs.configloader.configuration.adapters.properties.PropertiesManager;
 import me.cerratolabs.configloader.configuration.adapters.yaml.YAMLManager;
@@ -41,7 +40,6 @@ public class ConfigFactory {
         registerComparator(new YAMLManager());
         registerComparator(new PropertiesManager());
         registerComparator(new JSONManager());
-        registerComparator(new CSVManager());
     }
 
     /**
