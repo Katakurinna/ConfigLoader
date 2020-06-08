@@ -114,7 +114,7 @@ public class ConfigurationUsageCSVTypes {
 
         String key = "players";
         loader.get(key);
-        assertEquals("[Akane, Katakurinna, Nurio]", loader.get(key));
+        assertEquals("[Akane, Katakurinna, Nurio]", loader.get(key).toString());
 
 
         key = "lastLogin";
