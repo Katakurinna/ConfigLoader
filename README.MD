@@ -1,4 +1,5 @@
-# ConfigLoader
+# ConfigLoader [![](https://jitpack.io/v/Katakurinna/ConfigLoader.svg)](https://jitpack.io/#Katakurinna/ConfigLoader)
+
 ### Library to load / save configuration ###
 #### Fully configurable ####
 ----
